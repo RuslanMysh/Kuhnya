@@ -899,7 +899,7 @@ MonoBehaviour:
   gameInput: {fileID: 27462058}
   speed: 10
   rotationSpeed: 10
-  sprintSpeed: 30
+  sprintSpeed: 3
   counterMask:
     serializedVersion: 2
     m_Bits: 64
