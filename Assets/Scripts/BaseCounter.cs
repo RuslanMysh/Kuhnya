@@ -1,9 +1,36 @@
 using UnityEngine;
 
-public class BaseCounter : MonoBehaviour
+public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 {
+    protected KitchenObject kitchenObject;
+    [SerializeField] private Transform counterTopPoint;
     public virtual void Interact(Player player)
     {
         Debug.LogError("BaseCounter.Interact() была вызвана");
-    }  
+    }
+
+    public KitchenObject GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void ClearKitchenObject()
+    {
+        kitchenObject = null;
+    }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
+    }
+
+    public Transform GetKitchenObjectFollowTransform()
+    {
+        return counterTopPoint;
+    }
+
+    public void SetKitchenObject(KitchenObject kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;
+    }
 }
