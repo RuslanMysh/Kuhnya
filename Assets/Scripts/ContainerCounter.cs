@@ -1,11 +1,10 @@
 using UnityEngine;
 
-public class ContainerCounter : BaseCounter, IKitchenObjectParent
+public class ContainerCounter : BaseCounter
 {
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
 
 
-    private KitchenObject kitchenObject;
 
     public override void Interact(Player player)
     {
