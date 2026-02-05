@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf0b89e540319d47b1d0c1f4713efa3, type: 3}
+  m_Name: Uncooked-Cooked
+  m_EditorClassIdentifier: Assembly-CSharp::FryingRecipeSO
+  input: {fileID: 11400000, guid: de1b4aaeaa8eac846b114e4dc771005f, type: 2}
+  output: {fileID: 11400000, guid: d3a2f9055aa25e348b9d3d26245b4112, type: 2}
+  fryingTimerMax: 4

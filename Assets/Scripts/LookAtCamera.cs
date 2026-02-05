@@ -28,8 +28,6 @@ public class LookAtCamera : MonoBehaviour
             break;
             case Mode.CameraForwardInverted:
             break;
-        }
-
-        
+        }  
     }
 }
