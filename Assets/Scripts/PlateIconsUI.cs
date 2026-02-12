@@ -17,10 +17,15 @@ public class PlateIconsUI : MonoBehaviour
 
     private void UpdateVisual()
     {
+        foreach(Transform child in transform)
+        {
+            if(child == iconTamplate) continue;
+            Destroy(child.gameObject);
+        }
         foreach (KitchenObjectSO kitchenObjectSO in plateKithcenObject.GetKitchenObjectSOList())
         {
             Transform iconTransform = Instantiate(iconTamplate, transform);
-            iconTamplate.GetComponent<PlateIconsSingleUI>().SetKitchenObjectSO(kitchenObjectSO);
+            iconTransform.GetComponent<PlateIconsSingleUI>().SetKitchenObjectSO(kitchenObjectSO);
         }
     }
 
