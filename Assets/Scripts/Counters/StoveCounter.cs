@@ -110,6 +110,8 @@ public class StoveCounter : BaseCounter, IHasProgress
         if (!HasKitchenObject())
         {
             //на тумбе ничего не лежит
+
+            // у игрока есть в руках объект
             if (player.HasKitchenObject())
             {
                 if (HasRecipeWithInput(player.GetKitchenObject().GetKitchenObjectSO()))
@@ -126,7 +128,7 @@ public class StoveCounter : BaseCounter, IHasProgress
                     
                     fryingTimer = 0f;
                 }
-                // у игрока есть в руках объект
+                
             }
         }
         else
@@ -163,6 +165,11 @@ public class StoveCounter : BaseCounter, IHasProgress
                 OnStateChanged?.Invoke(this, new OnStateChangedEventArgs
                 {
                     state = this.state
+                });
+
+                OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    progressNormalized = 0f
                 });
             }
         }
