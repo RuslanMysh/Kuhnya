@@ -9,6 +9,9 @@ public class DeliveryManager : MonoBehaviour
 {
     public EventHandler OnRecipeSpawned;
     public EventHandler OnRecipeCompleted;
+    public EventHandler OnRecipeSuccess;
+    public EventHandler OnRecipeFailed;
+    
     public static DeliveryManager Instance { private set; get; }
     [SerializeField] private RecipeListSO recipeListSO;
 
@@ -81,6 +84,7 @@ public class DeliveryManager : MonoBehaviour
                     waitingRecipeSOList.RemoveAt(i);
 
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
 
                     return;
                 }
@@ -90,6 +94,7 @@ public class DeliveryManager : MonoBehaviour
         //Совпадений не найдено
         //игрок доставил не тот рецепт
         Debug.Log("игрок доставил не тот рецепт");
+        OnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList()
