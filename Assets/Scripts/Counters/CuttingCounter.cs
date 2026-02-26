@@ -11,17 +11,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
     {
         public float progressNormalized;
     }
-    //private void Awake()
-    //{
-    //    if (Instance == null)
-    //    {
-    //        Instance = this;
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError("Больше одного CuttingCounter");
-    //    }
-    //}
+    
     private int cuttingProgress;
     /// <summary>
     /// взятие предметов игроком с cuttingCounter
@@ -118,5 +108,9 @@ public class CuttingCounter : BaseCounter, IHasProgress
             }
         }
         return null;
+    }
+    new public static void ResetStaticData()
+    {
+        OnAnyCut = null;
     }
 }

@@ -45,4 +45,9 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
             OnAnyObjectPlacedHere?.Invoke(this, EventArgs.Empty);
         }
     }
+
+    public static void ResetStaticData()
+    {
+        OnAnyObjectPlacedHere = null;
+    }
 }
